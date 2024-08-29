@@ -1,0 +1,39 @@
+{
+    "server":
+    {
+        "server_address": "localhost:8000",
+        "endpoints": [
+            {
+                "path": "/device/time",
+                "function": "GetTime",
+                "type": "GET"
+            },
+            {
+                "path": "/device/memory",
+                "function": "GetMemory",
+                "type": "GET"
+            },
+            {
+                "path": "/device/image",
+                "function": "ImageDimensions",
+                "type": "POST",
+                "multipart": true
+            }
+        ]
+    },
+    "device":
+    [
+        {
+            "id": 1,
+            "name": "test",
+            "controller": "testController",
+            "configuration": {}
+        },
+        {
+            "id": 2,
+            "name": "swig",
+            "controller": "testControllerSwig",
+            "configuration": {}
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "server": {
+        "type": "object",
+        "properties": {
+          "server_address": {
+            "type": "string"
+          },
+          "endpoints": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "function": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "multipart":{
+                    "type": "boolean",
+                    "default": false
+                  }
+                },
+                "required": [
+                  "path",
+                  "type",
+                  "function"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "server_address",
+          "endpoints"
+        ]
+      },
+      "device": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "controller": {
+                "type": "string"
+              },
+              "configuration": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "controller",
+              "configuration"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "server",
+      "device"
+    ]
+  }
